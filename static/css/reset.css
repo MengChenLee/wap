@@ -1,0 +1,287 @@
+*{margin: 0;padding: 0;list-style: none;}
+/*
+KISSY CSS Reset
+理念：1. reset 的目的不是清除浏览器的默认样式，这仅是部分工作。清除和重置是紧密不可分的。
+2. reset 的目的不是让默认样式在所有浏览器下一致，而是减少默认样式有可能带来的问题。
+3. reset 期望提供一套普适通用的基础样式。但没有银弹，推荐根据具体需求，裁剪和修改后再使用。
+特色：1. 适应中文；2. 基于最新主流浏览器。
+维护：玉伯<lifesinger@gmail.com>, 正淳<ragecarrier@gmail.com>
+ */
+
+/** 清除内外边距 **/
+body,div, h1, h2, h3, h4, h5, h6, hr, p, blockquote, /* structural elements 结构元素 */
+dl, dt, dd, ul, ol, li, /* list elements 列表元素 */
+pre, /* text formatting elements 文本格式元素 */
+form, fieldset, legend, button, input, textarea, /* form elements 表单元素 */
+th, td /* table elements 表格元素 */ {
+  margin: 0;
+  padding: 0;
+  font-family: "Micrsoft YaHei","PingFangSC-Semibold";
+  box-sizing : content-box;
+}
+input:-webkit-autofill, textarea:-webkit-autofill, select:-webkit-autofill,
+input:-webkit-autofill:hover,input:-webkit-autofill:focus{
+  background-color: #262626 !important;
+  background-image: none !important;
+  color: #545454 !important;
+  /* -webkit-text-fill-color: red; //这个私有属性是有效的 */
+}
+input:-webkit-autofill:hover {
+  /* style code */
+}
+input:-webkit-autofill:focus {
+  /* style code */
+}
+
+/** 设置默认字体 **/
+body,
+button, input, select, textarea /* for ie */ {
+  font: 12px/1.5 tahoma, arial, \5b8b\4f53, sans-serif;
+}
+h1, h2, h3, h4, h5, h6 { font-size: 100%; }
+address, cite, dfn, em, var, i, b, strong{ font-style: normal; } /* 将斜体扶正 */
+code, kbd, pre, samp { font-family: courier new, courier, monospace; } /* 统一等宽字体 */
+small { font-size: 12px; } /* 小于 12px 的中文很难阅读，让 small 正常化 */
+
+/** 重置列表元素 **/
+ul, ol { list-style: none; }
+
+/** 重置文本格式元素 **/
+a { text-decoration: none;color: #ffffff; }
+
+a:hover {
+  text-decoration: none;
+}
+/** input聚焦光标 **/
+input{
+  -moz-user-select: none;
+  -webkit-user-select: none;
+}
+input[type='checkbox']{
+  width: 20px;
+  height: 20px;
+  background-color: #fff;
+  -webkit-appearance:none;
+  border: 1px solid #c9c9c9;
+  border-radius: 2px;
+  outline: none;
+}
+/** 重置表单元素 **/
+legend { color: #000; } /* for ie6 */
+fieldset, img { border: 0; } /* img 搭车：让链接里的 img 无边框 */
+button, input, select, textarea { font-size: 100%;outline:none; border: none;} /* 使得表单元素在 ie 下能继承字体大小 */
+textarea{
+  resize:none;
+  background-color: #111111;
+}
+/* 注：optgroup 无法扶正 */
+
+/** 重置表格元素 **/
+table { border-collapse: collapse; border-spacing: 0; }
+
+/* 清除浮动 */
+.ks-clear:after, .clear:after {
+  content: '\20';
+  display: block;
+  height: 0;
+  clear: both;
+}
+.ks-clear, .clear {
+  *zoom: 1;
+}
+.positionRow{
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.positionCol{
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+}
+.positionCenter{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+.positionFixCenter{
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+.HomemadeButton{
+  border: 1px solid #EF2B3A;
+  border-radius: 2px;
+  background-color: #EF2B3A;
+  color: #fff;
+}
+.HomemadeButtonOriginal{
+  border: 1px solid #5B111B;
+  border-radius: 4px;
+  background-color: #5B111B;
+  color: #606060;
+}
+.HomemadeButtonSon{
+  display: block;
+  width: 100%;
+  height: 100%;
+  line-height: 44px;
+  font-family: PingFangSC-Semibold;
+  font-size: 18px;
+  color: #cccccc;
+  text-align: center;
+}
+
+.footerBtnParent {
+  position: relative;
+}
+.footerBtn{
+  height: 44px;
+  position: absolute;
+  left: 0;
+}
+.footerBtnClear{
+  margin-bottom: 65px;
+}
+
+.selectH1 {
+  color: #EF2B3A;
+}
+.messageAlert{
+  display: none;
+  width: 30%;
+  position: fixed;
+  z-index: 100;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 15px;
+  border-radius: 10px;
+  background-color: #262626;
+  text-align: center;
+}
+.messageAlert img{
+  width: 60px;
+  height: 60px;
+}
+.messageAlert span{
+  font-family: PingFangSC-Semibold;
+  display: block;
+  font-size: 18px;
+  line-height: 25px;
+  color: #ffffff;
+}
+/* 解决移动端点击高亮效果 */
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+.el-upload--picture-card{
+  width: 100px!important;
+  height: 100px!important;
+  line-height: 98px!important;
+  background-color: #000;
+  border: none;
+}
+.el-upload-list--picture-card .el-upload-list__item-thumbnail{
+  width: 100px!important;
+  height: 100px!important;
+}
+.el-upload-list--picture-card .el-upload-list__item{
+  width: 100px!important;
+  height: 100px!important;
+}
+.loginMain input{
+  background-color: #262626!important;
+}
+.loginMain .user{
+  background-color: #262626!important;
+}
+.mint-swipe-indicator{
+  width: 10px !important;
+  height: 2px !important;
+  border-radius: 2px !important;
+  background-color: #fff !important;
+  opacity: 0.8 !important;
+}
+.is-active{
+  background-color: #EF2B3A !important;
+}
+.publicFlex{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 10px 15px;
+}
+.headerRes{
+  font-family: PingFangSC-Semibold;
+  font-size: 20px;
+  line-height: 35px;
+  color: #FFFFFF;
+  letter-spacing: 0;
+}
+.backBtn{
+  overflow: hidden;
+}
+.flexClear,
+.backBtn,
+.backBtn img{
+  width: 35px;
+  height: 35px;
+}
+.flexClear{
+  display: inline-block;
+}
+.imgShow .el-upload--picture-card{
+  line-height: 113px!important;
+}
+.imgShow .el-upload--picture-card,
+.imgShow .el-upload-list--picture-card .el-upload-list__item-thumbnail,
+.imgShow .el-upload-list--picture-card .el-upload-list__item {
+  width: 100% !important;
+  height: 100% !important;
+  background-color: transparent !important;
+}
+.el-upload-list--picture-card .el-upload-list__item{
+  margin: 0 1.5% 1.5% 0 !important;
+}
+.el-switch__core{
+  top: 12px;
+}
+.mint-switch-core{
+  width: 52px !important;
+  height: 22px !important;
+  border-radius: 11px !important;
+  border-color: #fdfdfd !important;
+  background-color: #fdfdfd !important;
+}
+.mint-switch-core::before{
+  width: 50px !important;
+  height: 20px !important;
+}
+.mint-switch-core::after {
+  width: 30px !important;
+  height: 30px !important;
+  top: -5px;
+  left: -1px;
+}
+.mint-switch-input:checked + .mint-switch-core{
+  border-color: #ef2b3a !important;
+  background-color: #ef2b3a !important;
+}
+.mint-switch-input:checked + .mint-switch-core::after{
+  transform: translateX(22px) !important;
+}
+/* 加载更多 游戏板块 */
+.mint-loadmore-text{
+  color: white!important;
+ }
+.releaseImg div .el-upload-list.el-upload-list--picture-card{
+  display: none !important;
+}
+.mint-cell-wrapper{
+  background-image: none !important;
+}
